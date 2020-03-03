@@ -1,13 +1,6 @@
 # Compiled class file
 *.class
 
-# Eclipse
-.settings/
-.buildpath
-.classpath
-.project
-persistence.xml
-
 # Log file
 *.log
 

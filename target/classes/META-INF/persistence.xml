@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-<<<<<<< HEAD
 	<persistence-unit name="Car-Owner-Project" transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>model.Car</class>
@@ -12,11 +11,5 @@
 			<property name="javax.persistence.jdbc.user" value="Admin"/>
 			<property name="javax.persistence.jdbc.password" value="Ru-/Pm6#e[iA6k("/>
 		</properties>
-=======
-	<persistence-unit name="Car-Owner-Project">
-		<class>model.Car</class>
-		<class>model.Person</class>
-		<class>model.CarOrder</class>
->>>>>>> 479aed4036a5c399bebca58ba4706884b5a27494
 	</persistence-unit>
 </persistence>

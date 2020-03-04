@@ -5,6 +5,7 @@
 		<class>model.Car</class>
 		<class>model.Person</class>
 		<class>model.CarOrder</class>
+		<class>controller.LocalDateAttributeConverter</class>
 		<properties>
 			<property name="eclipselink.jdbc.batch-writing" value="JDBC"/>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>

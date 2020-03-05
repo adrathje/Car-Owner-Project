@@ -67,7 +67,7 @@ public class CarHelper {
 		em.close();
 	}
 
-	public List<Car> searchForPetByType(String modelName) {
+	public List<Car> searchForItemByModel(String modelName) {
 		// TODO Auto-generated method stub
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
@@ -78,7 +78,7 @@ public class CarHelper {
 		return	foundModel;
 	}
 
-	public List<Car> searchForPetByName(String makeName) {
+	public List<Car> searchForItemByMake(String makeName) {
 		// TODO Auto-generated method stub
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
@@ -89,7 +89,7 @@ public class CarHelper {
 		return	foundMake;
 	}
 	
-	public List<Car> searchForType(String typeName) {
+	public List<Car> searchForItemByType(String typeName) {
 		// TODO Auto-generated method stub
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();

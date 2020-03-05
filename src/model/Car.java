@@ -64,6 +64,11 @@ public class Car {
 	public void setType(String type) {
 		this.type = type;
 	}
+	
+	// Print method
+	public String returnCarDetails() {
+		return "Car ID= " + carID + ", model=" + model + ", make=" + make + ", type=" + type;
+	}
 
 	@Override
 	public String toString() {

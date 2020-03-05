@@ -3,17 +3,38 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
+<style type="text/css">
+.btn {
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.btn, .btn:link, .btn:visited {
+    color: #FFFFFF;
+    background-color: #0077be;
+}
+.btn:hover {
+    color: #FFFFFF;
+    background-color: #368DC5;
+}
+</style>
 <head>
 <meta charset="ISO-8859-1">
 <title>Edit list</title>
 </head>
 <body>
 <form action = "editItemServlet" method="post">
-Model: <input type ="text" name = "store" value= "${itemToEdit.model}">
-Make: <input type = "text" name = "item" value= "${itemToEdit.make}">
-Type: <input type = "text" name = "item" value= "${itemToEdit.type}">s
+<p><label>Model: </label><input type ="text" name = "store" value= "${itemToEdit.model}"></p>
+<p><label>Make: </label><input type = "text" name = "item" value= "${itemToEdit.make}"></p>
+<p><label>Type: </label><input type = "text" name = "item" value= "${itemToEdit.type}"></p>
 <input type = "hidden" name = "id" value="${itemToEdit.id}">
-<input type = "submit" value="Save Edited Item">
+<input class="btn" type = "submit" value="Save Edited Item">
 </form>
 </body>
 </html>

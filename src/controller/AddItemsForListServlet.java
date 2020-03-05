@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class AddItemsForListServlet
  */
-@WebServlet("/AddItemsForListServlet")
+@WebServlet("/addItemsForListServlet")
 public class AddItemsForListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -27,7 +27,14 @@ public class AddItemsForListServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		CarHelper dao = new CarHelper();
+		request.setAttribute("allItems", dao.showAllItems());
+		if(dao.showAllItems().isEmpty()){
+			request.setAttribute("allItems", " ");
+		}
+		
+		getServletContext().getRequestDispatcher("/new-list.jsp").forward(request, response); 
+
 	}
 
 	/**

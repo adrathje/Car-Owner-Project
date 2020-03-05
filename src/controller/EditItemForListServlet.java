@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Car;
+
 /**
  * Servlet implementation class EditItemForListServlet
  */
@@ -35,7 +37,21 @@ public class EditItemForListServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		CarHelper dao = new CarHelper();
+
+		String model = request.getParameter("model");
+		String make = request.getParameter("make");
+		String type = request.getParameter("type");
+		Integer tempId = Integer.parseInt(request.getParameter("id"));
+
+		Car itemToUpdate = dao.searchForItemById(tempId);
+		itemToUpdate.setModel(model);
+		itemToUpdate.setMake(make);
+		itemToUpdate.setType(type);
+		
+		dao.updateItem(itemToUpdate); 
+		 
+		getServletContext().getRequestDispatcher("/viewAllListsServlet").forward(request, response);
 	}
 
 }

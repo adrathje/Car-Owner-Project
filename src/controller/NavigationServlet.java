@@ -7,10 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Car;
+
 /**
  * Servlet implementation class NavigationServlet
  */
-@WebServlet("/NavigationServlet")
+@WebServlet("/navigationServlet")
 public class NavigationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -35,7 +37,37 @@ public class NavigationServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		CarHelper dao = new CarHelper();
+		String act = request.getParameter("doThisToItem");
+
+		// after all changes, we should redirect to the viewAllItems servlet
+		// The only time we don't is if they select to add a new item or edit
+		String path = "/viewAllListsServlet";
+
+		if (act.equals("delete")) {
+			try {
+				Integer tempId = Integer.parseInt(request.getParameter("id"));
+				Car itemToDelete = dao.searchForItemById(tempId);
+				dao.deleteItem(itemToDelete);
+			} catch (NumberFormatException e) {
+				System.out.println("Forgot to select an item");
+			}
+		} else if (act.equals("edit")) {
+			try {
+				Integer tempId = Integer.parseInt(request.getParameter("id"));
+				Car itemToEdit = dao.searchForItemById(tempId);
+				request.setAttribute("itemToEdit", itemToEdit);
+				path = "/edit-list.jsp"; 
+			} catch (NumberFormatException e) {
+				System.out.println("Forgot to select an item");
+			}
+			
+		} else if (act.equals("add")) {
+			path = "/index.html";
+		}
+
+		getServletContext().getRequestDispatcher(path).forward(request, response);
+
 	}
 
 }

@@ -1,16 +1,21 @@
 package controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.CarOrder;
+import model.CarOrderHelper;
+
 /**
  * Servlet implementation class ViewAllListsServlet
  */
-@WebServlet("/ViewAllListsServlet")
+@WebServlet("/viewAllListsServlet")
 public class ViewAllListsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -27,7 +32,15 @@ public class ViewAllListsServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		CarOrderHelper coh = new CarOrderHelper();
+		List<CarOrder> abc = coh.getList();
+		request.setAttribute("allList", abc);
+		
+		if(abc.isEmpty()) {
+			request.setAttribute("allList", abc);
+		}
+		
+		getServletContext().getRequestDispatcher("/car-list-by-user.jsp").forward(request, response);
 	}
 
 	/**

@@ -13,7 +13,8 @@
 		date: <input type="text" name="month" placeholder="mm" size="4">
 		<input type="text" name="day" placeholder="dd" size="4">, <input
 			type="text" name="year" placeholder="yyyy" size="4"> Person
-		Name: <input type="text" name="PersonName"><br /> Available
+		First name: <input type="text" name="firstName"><br /> Last
+		name: <input type="text" name="lastName"><br /> Available
 		cars:<br /> <select name="allItemsToAdd" multiple size="6">
 			<c:forEach items="${requestScope.allItems}" var="currentitem">
 				<option value="${currentitem.carOrderNumber}">${currentitem.model}|

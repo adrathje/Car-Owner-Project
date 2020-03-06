@@ -11,7 +11,7 @@ import model.Person;
 public class PersonHelper {
 static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("Car-Owner-Project");
 	
-	public void insertShopper(Person p) {
+	public void insertPerson(Person p) {
 		EntityManager em = emfactory .createEntityManager();  
 		em.getTransaction().begin();
 		em.persist(p);

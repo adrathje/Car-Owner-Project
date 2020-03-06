@@ -36,9 +36,7 @@ public class CreateNewListServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		CarHelper lih = new CarHelper();
-		String listName = request.getParameter("listName");
-		System.out.println("List Name: " + listName);
+		CarHelper carHelper = new CarHelper();
 
 		String month = request.getParameter("month");
 		String day = request.getParameter("day");
@@ -57,14 +55,14 @@ public class CreateNewListServlet extends HttpServlet {
 		if (selectedCars != null && selectedCars.length > 0) {
 			for (int i = 0; i < selectedCars.length; i++) {
 				System.out.println(selectedCars[i]);
-				Car c = lih.searchForItemById(Integer.parseInt(selectedCars[i]));
+				Car c = carHelper.searchForItemById(Integer.parseInt(selectedCars[i]));
 				selectedCarsInList.add(c);
 
 			}
 		}
 
 		Person person = new Person(firstName, lastName);
-		CarOrder sld = new CarOrder(listName, ld, person);
+		CarOrder sld = new CarOrder(ld, person);
 		sld.setListOfItems(selectedCarsInList);
 		CarOrderHelper slh = new CarOrderHelper();
 		slh.insertNewListDetails(sld);

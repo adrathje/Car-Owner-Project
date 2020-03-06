@@ -81,6 +81,17 @@ public class CarOrder {
 		this.person = person;
 	}
 
+	
+	
+	/**
+	 * @param date
+	 * @param person
+	 */
+	public CarOrder(LocalDate date, Person person) {
+		this.date = date;
+		this.person = person;
+	}
+
 	/**
 	 * @return the carOrderNumber
 	 */

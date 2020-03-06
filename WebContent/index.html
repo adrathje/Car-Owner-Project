@@ -5,35 +5,48 @@
 <title>Car order home page</title>
 <style type="text/css">
 .btn {
-    border: none;
-    display: inline-block;
-    padding: 8px 16px;
-    vertical-align: middle;
-    overflow: hidden;
-    text-decoration: none;
-    text-align: center;
-    cursor: pointer;
-    white-space: nowrap;
+	border: none;
+	display: inline-block;
+	padding: 8px 16px;
+	vertical-align: middle;
+	overflow: hidden;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
+	white-space: nowrap;
 }
+
 .btn, .btn:link, .btn:visited {
-    color: #FFFFFF;
-    background-color: #0077be;
+	color: #FFFFFF;
+	background-color: #0077be;
 }
+
 .btn:hover {
-    color: #FFFFFF;
-    background-color: #368DC5;
+	color: #FFFFFF;
+	background-color: #368DC5;
 }
 </style>
 </head>
 <body>
-<form action = "addItemsForListServlet" method="post">
-<p><label class="lbwidth">Model: </label><input type ="text" name = "model"></p>
-<p><label>Make: </label><input type = "text" name = "make"><br></p>
-<p><label>Type: </label><input type = "text" name = "type"><br></p>
-<input class="btn" type = "submit" value="Add Item">
-</form> <br />
-<!-- <a href = "viewAllItemsServlet">View the complete list</a><br> -->
-<p><a href="viewAllListsServlet">View all car order lists</a></p>
-<p><a href="addItemsForListServlet">Create a new list</a></p> 
+	<form action="addItemsForListServlet" method="post">
+		<p>
+			<label class="lbwidth">Model: </label><input type="text" name="model">
+		</p>
+		<p>
+			<label>Make: </label><input type="text" name="make"><br>
+		</p>
+		<p>
+			<label>Type: </label><input type="text" name="type"><br>
+		</p>
+		<input class="btn" type="submit" value="Add Item">
+	</form>
+	<br />
+	<!-- <a href = "viewAllItemsServlet">View the complete list</a><br> -->
+	<p>
+		<a href="viewAllListsServlet">View all car order lists</a>
+	</p>
+	<p>
+		<a href="addItemsForListServlet">Create a new list</a>
+	</p>
 </body>
 </html>

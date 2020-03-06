@@ -29,7 +29,7 @@
 <title>Edit list</title>
 </head>
 <body>
-<form action = "editItemForListServlet" method="post">
+<form action = "editItemServlet" method="post">
 <p><label>Model: </label><input type ="text" name = "model" value= "${itemToEdit.model}"></p>
 <p><label>Make: </label><input type = "text" name = "make" value= "${itemToEdit.make}"></p>
 <p><label>Type: </label><input type = "text" name = "type" value= "${itemToEdit.type}"></p>

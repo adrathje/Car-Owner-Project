@@ -23,6 +23,7 @@ public class CarOrder {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "carOrderNumber")
 	private int carOrderNumber;
+
 	@Column(name = "carID")
 	private Car car;
 	@Column(name = "date")
@@ -31,9 +32,11 @@ public class CarOrder {
 	@JoinColumn(name = "personID")
 	private Person person;
 	@OneToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+
 	@JoinTable(name = "car_order", joinColumns = {
 			@JoinColumn(name = "carOrderNumber", referencedColumnName = "carOrderNumber") }, inverseJoinColumns = {
 					@JoinColumn(name = "carID", referencedColumnName = "carID", unique = true) })
+
 	private List<Car> listOfItems;
 
 	/**

@@ -8,12 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form method="post" action="listNavigationServlet">
+	<form method="post" action="NavigationServlet">
 		<table>
 			<c:forEach items="${requestScope.allLists}" var="currentlist">
 				<tr>
 					<td><input type="radio" name="id" value="${currentlist.id}"></td>
-					<td><h2>${currentlist.listName}</h2></td>	
 				</tr>
 				<tr>
 					<td colspan="3">Order Date: ${currentlist.date}</td>
@@ -36,7 +35,7 @@
 			type="submit" value="delete" name="doThisToItem"> <input
 			type="submit" value="add" name="doThisToItem">
 	</form>
-	<a href="addItemsForListServlet">Create a new List</a>
+	<a href="createNewListServlet">Create a new List</a>
 	<a href="index.html">Insert a new car</a>
 </body>
 </html>

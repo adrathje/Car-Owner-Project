@@ -21,19 +21,19 @@ import javax.persistence.Table;
 public class CarOrder {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "CAR_ORDER_NUMBER")
+	@Column(name = "carOrderNumber")
 	private int carOrderNumber;
-	@Column(name = "CAR_ID")
+	@Column(name = "carID")
 	private Car car;
-	@Column(name = "DATE")
+	@Column(name = "date")
 	private LocalDate date;
 	@ManyToOne
-	@JoinColumn(name = "PERSON_ID")
+	@JoinColumn(name = "personID")
 	private Person person;
 	@OneToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
-	@JoinTable(name = "CARS_ON_LIST", joinColumns = {
-			@JoinColumn(name = "CAR_ORDER_NUMBER", referencedColumnName = "CAR_ORDER_NUMBER") }, inverseJoinColumns = {
-					@JoinColumn(name = "CAR_ID", referencedColumnName = "CAR_ID", unique = true) })
+	@JoinTable(name = "car_order", joinColumns = {
+			@JoinColumn(name = "carOrderNumber", referencedColumnName = "carOrderNumber") }, inverseJoinColumns = {
+					@JoinColumn(name = "carID", referencedColumnName = "carID", unique = true) })
 	private List<Car> listOfItems;
 
 	/**
@@ -77,6 +77,17 @@ public class CarOrder {
 	 */
 	public CarOrder(Car car, LocalDate date, Person person) {
 		this.car = car;
+		this.date = date;
+		this.person = person;
+	}
+
+	
+	
+	/**
+	 * @param date
+	 * @param person
+	 */
+	public CarOrder(LocalDate date, Person person) {
 		this.date = date;
 		this.person = person;
 	}

@@ -8,11 +8,10 @@
 <title>Edit a list</title>
 </head>
 <body>
-	<form action="createNewListServlet" method="post">
-		List Name: <input type="text" name="listName"><br /> Order
+	<form action="createNewListServlet" method="post"> Order
 		date: <input type="text" name="month" placeholder="mm" size="4">
 		<input type="text" name="day" placeholder="dd" size="4">, <input
-			type="text" name="year" placeholder="yyyy" size="4"> Person
+			type="text" name="year" placeholder="yyyy" size="4"> 
 		First name: <input type="text" name="firstName"><br /> Last
 		name: <input type="text" name="lastName"><br /> Available
 		cars:<br /> <select name="allItemsToAdd" multiple size="6">

@@ -29,10 +29,10 @@
 <title>Edit list</title>
 </head>
 <body>
-<form action = "editItemServlet" method="post">
-<p><label>Model: </label><input type ="text" name = "store" value= "${itemToEdit.model}"></p>
-<p><label>Make: </label><input type = "text" name = "item" value= "${itemToEdit.make}"></p>
-<p><label>Type: </label><input type = "text" name = "item" value= "${itemToEdit.type}"></p>
+<form action = "editItemForListServlet" method="post">
+<p><label>Model: </label><input type ="text" name = "model" value= "${itemToEdit.model}"></p>
+<p><label>Make: </label><input type = "text" name = "make" value= "${itemToEdit.make}"></p>
+<p><label>Type: </label><input type = "text" name = "type" value= "${itemToEdit.type}"></p>
 <input type = "hidden" name = "id" value="${itemToEdit.id}">
 <input class="btn" type = "submit" value="Save Edited Item">
 </form>
